@@ -15,6 +15,10 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  */
 public class Picture extends SimplePicture 
 {
+    DigitalPicture A = new SimplePicture();
+    DigitalPicture B = new Picture();
+    SimplePicture C = new Picture();
+    Picture p = new SimplePicture();
   ///////////////////// constructors //////////////////////////////////
   
   /**

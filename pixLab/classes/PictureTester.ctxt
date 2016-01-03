@@ -16,5 +16,5 @@ comment4.target=void\ testEdgeDetection()
 comment4.text=Method\ to\ test\ edgeDetection
 comment5.params=args
 comment5.target=void\ main(java.lang.String[])
-comment5.text=\ Main\ method\ for\ testing.\ \ Every\ class\ can\ have\ a\ main\nmethod\ in\ Java
+comment5.text=\ Main\ method\ for\ testing.\ \ Every\ class\ can\ have\ a\ main\r\nmethod\ in\ Java
 numComments=6
