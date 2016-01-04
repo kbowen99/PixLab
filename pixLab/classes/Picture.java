@@ -15,10 +15,7 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  */
 public class Picture extends SimplePicture 
 {
-    DigitalPicture A = new SimplePicture();
-    DigitalPicture B = new Picture();
-    SimplePicture C = new Picture();
-    Picture p = new SimplePicture();
+
   ///////////////////// constructors //////////////////////////////////
   
   /**
@@ -101,6 +98,20 @@ public class Picture extends SimplePicture
       }
     }
   }
+  
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }    
+  
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
