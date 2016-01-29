@@ -15,7 +15,6 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  */
 public class Picture extends SimplePicture 
 {
-
   ///////////////////// constructors //////////////////////////////////
   
   /**
@@ -98,76 +97,6 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
-  public void keepOnlyBlue()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    for (Pixel[] rowArray : pixels)
-    {
-      for (Pixel pixelObj : rowArray)
-      {
-        pixelObj.setRed(0);
-        pixelObj.setGreen(0);
-      }
-    }
-  }    
-  
-  public void negate()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    for (Pixel[] rowArray : pixels)
-    {
-      for (Pixel pixelObj : rowArray)
-      {
-          pixelObj.setBlue(255 - pixelObj.getBlue());
-          pixelObj.setRed(255 - pixelObj.getRed());
-          pixelObj.setGreen(255 - pixelObj.getGreen());
-      }
-    }
-  }
-  
-  public void grayscale()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    for (Pixel[] rowArray : pixels)
-    {
-      for (Pixel pixelObj : rowArray)
-      {
-          // (pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue())/3
-          pixelObj.setRed((pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue())/3);
-          pixelObj.setGreen((pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue())/3);
-          pixelObj.setBlue((pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue())/3);
-      }
-    }
-  }
-  
-  public void fixUnderwater()
-  {
-    Pixel[][] pixels = this.getPixels2D();
-    int cF = 12; //Close-Ness Factor
-    for (Pixel[] rowArray : pixels)
-    {
-      for (Pixel pixelObj : rowArray)
-      {
-          // Fish is R20 G170 B170
-          if (Math.abs(pixelObj.getRed() - 20) > cF){
-              pixelObj.setRed(0);
-              pixelObj.setGreen(0);
-              pixelObj.setBlue(0);
-          }
-          if (Math.abs(pixelObj.getGreen() - 170) > cF){
-              pixelObj.setRed(0);
-              pixelObj.setGreen(0);
-              pixelObj.setBlue(0);
-          }
-          if (Math.abs(pixelObj.getBlue() - 170) > cF){
-              pixelObj.setRed(0);
-              pixelObj.setGreen(0);
-              pixelObj.setBlue(0);
-          }
-      }
-    }
-  }   
   
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
