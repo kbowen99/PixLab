@@ -29,56 +29,6 @@ public class IntArrayWorker
   }
   
   /**
-   * method to count number of times a passed integer value is found in the matrix
-   * @return number of times a passed integer value is found
-   */
-  public int getCount(int index){
-      int count = 0;  
-        for (int row = 0; row < matrix.length; row++)
-        {
-            for (int col = 0; col < matrix[0].length; col++)
-            {
-                if (matrix[row][col] == index){
-                    count++;
-                }
-            }
-       }
-      return count;
-    }
-    
-    /**
-   * method that returns the largest value in the matrix
-   * @return largest value
-   */
-  public int getLargest(){
-      int large = matrix[0][0];  
-        for (int row = 0; row < matrix.length; row++)
-        {
-            for (int col = 0; col < matrix[0].length; col++)
-            {
-                if (matrix[row][col] > large){
-                    large = matrix[row][col];
-                }
-            }
-       }
-      return large;
-    }
-  
-   /**
-   * method that returns the largest value in the matrix
-   * @return largest value
-   */
-  public int getColTotal(int col){
-      int total = 0;
-        for (int row = 0; row < matrix.length; row++)
-        {
-            total += matrix[row][col];
-       }
-      return total;
-    }
-    
-    
-  /**
    * Method to return the total using a nested for-each loop
    * @return the total of the values in the array
    */
